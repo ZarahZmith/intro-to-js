@@ -22,7 +22,12 @@
  //     your `birthYear` and the `currentYear`
  //     (NOTE: DO NOT simply assign a number to the `age` variable, use an expression!)
 
-
+let firstName = "Sarah";
+let lastName = "Smith";
+const birthYear = 1993;
+let currentYear = 2017;
+let middleName;
+let age = currentYear - birthYear;
 
  // TODO 2:
  // (a) Create a `greeting` variable as a string which says:  "Hello there _____!"
@@ -33,6 +38,10 @@
  //     NOTE: This variable SHOULD NOT have any decimal places!
  //     NOTE: You MUST USE an expression for this, it may have more than one operation!
 
+let greeting = "Hello there " + firstName + "!";
+let years = birthYear - 1900; // 93
+let decadeRemainder = years % 10; // 3
+let decades = (years - decadeRemainder)/10; // 9
 
 
  // TODO 3:
@@ -47,7 +56,19 @@
  //         depending on the value of `instructorIsAwesome`
  //     NOTE: You MUST use code to determine which value to assign to `review`!
 
-
+let style;
+if (age < 35) {
+  style = "hip";
+} else {
+  style = "classic";
+}
+let instructorIsAwesome = true;
+let review;
+if (instructorIsAwesome) {
+  review = "good";
+} else {
+  review = "bad";
+}
 
  // TODO 4:
  // (a) Create a function called `math` which accepts three arguments: two numbers
@@ -61,7 +82,26 @@
  // (c) If the `math` function is NOT called with one of the operations in (b)
  //     then it should return the value for something that is Not a Number
 
-
+function math(numberOne, numberTwo, mathematicalOperation) {
+  if (mathematicalOperation === "add") {
+    let addition = numberOne + numberTwo;
+    return addition;
+  }
+  if (mathematicalOperation === "subtract") {
+    let subtraction = numberOne - numberTwo;
+    return subtraction;
+  }
+  if (mathematicalOperation === "multiply") {
+    let multiplication = numberOne * numberTwo;
+    return multiplication;
+  }
+  if (mathematicalOperation === "divide") {
+    let division = numberOne / numberTwo;
+    return division;
+  } else {
+    return NaN;
+  }
+}
 
 
  // TODO 5:
@@ -73,7 +113,22 @@
  // (b) If any of the words is not provided to the function then it should use
  //     the word "bananas" instead.
 
-
+function madlib(wordOne, wordTwo, wordThree, wordFour) {
+  if (!wordOne) {
+    wordOne = "bananas";
+  }
+  if (!wordTwo) {
+    wordTwo = "bananas";
+  }
+  if (!wordThree) {
+    wordThree = "bananas";
+  }
+  if (!wordFour) {
+    wordFour = "bananas";
+  }
+  let sentence = "I prefer " + wordOne + " while I " + wordTwo + " so that I don't " + wordThree + " on the " + wordFour + ".";
+  return sentence;
+}
 
 
  /* ******************************************************************
